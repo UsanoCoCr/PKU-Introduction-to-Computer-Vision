@@ -1,0 +1,180 @@
+{
+  "main": {
+    "id": "4a8a26a1f50f0fcb",
+    "type": "split",
+    "children": [
+      {
+        "id": "831479d6d578e39c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1868c97ffb4a0e93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS231n.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "45099b7a5fdce3fa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CV导论.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e5a1c5c97429cf63",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Intro_to_CV_Lecture02_02_28.pdf"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a7105f8ca18466e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f8826e4ca6c47ec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ef596ea263dd1d9c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cfd8c59d069b4fe6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "44b77011652ea2e3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "581eef4f2b241d9c",
+    "type": "split",
+    "children": [
+      {
+        "id": "8337e585ae250ebc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "af369d23d778f82b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Intro_to_CV_Lecture02_02_28.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "71c2b042d131a9fe",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Intro_to_CV_Lecture02_02_28.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "297fab9d36077268",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d97c546cfefd95a9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Intro_to_CV_Lecture02_02_28.pdf"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "e5a1c5c97429cf63",
+  "lastOpenFiles": [
+    "CV导论.md",
+    "Intro_to_CV_Lecture02_02_28.pdf",
+    "pictures",
+    "CS231n.md",
+    "FULL_DOCUMENT.pdf"
+  ]
+}
