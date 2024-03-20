@@ -2,7 +2,11 @@ import numpy as np
 from utils import  read_img, draw_corner
 from HM1_Convolve import convolve, Sobel_filter_x,Sobel_filter_y,padding
 
-
+def rectangle_filter(img, window_size):
+        padding_img = padding(img, window_size//2, "zeroPadding") 
+        rectangle_kernel = np.ones((window_size, window_size))
+        output = convolve(padding_img, rectangle_kernel)
+        return output
 
 def corner_response_function(input_img, window_size, alpha, threshold):
     """
@@ -25,12 +29,6 @@ def corner_response_function(input_img, window_size, alpha, threshold):
     I_xx = I_x**2
     I_yy = I_y**2
     I_xy = I_x*I_y    
-
-    def rectangle_filter(img, window_size):
-        padding_img = padding(img, 1, "zeroPadding")
-        rectangle_kernel = np.ones((window_size, window_size))
-        output = convolve(padding_img, rectangle_kernel)
-        return output
 
     I_xx = rectangle_filter(I_xx, window_size)
     I_yy = rectangle_filter(I_yy, window_size)

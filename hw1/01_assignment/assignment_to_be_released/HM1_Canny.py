@@ -1,6 +1,7 @@
 import numpy as np
 from HM1_Convolve import Gaussian_filter, Sobel_filter_x, Sobel_filter_y, padding
 from utils import read_img, write_img
+from HM1_HarrisCorner import rectangle_filter
 
 def compute_gradient_magnitude_direction(x_grad, y_grad):
     """
@@ -27,13 +28,12 @@ def non_maximal_suppressor(grad_mag, grad_dir):
         Outputs:
             output: array(float)
     """   
-    grad_mag = padding(grad_mag, 1, "zeroPadding")
-    grad_dir = padding(grad_dir, 1, "zeroPadding")
+    grad_mag = padding(grad_mag, 1, "replicatePadding")
+    grad_dir = padding(grad_dir, 1, "replicatePadding")
     NMS_output = np.zeros_like(grad_mag)
     grad_dir = grad_dir * 180 / np.pi
-    NMS_output[1:-1, 1:-1] = grad_mag[1:-1, 1:-1]
+    # NMS_output[1:-1, 1:-1] = grad_mag[1:-1, 1:-1]
     grad_dir = np.mod(grad_dir, 180)
-    # print(grad_dir)
     east_west = (grad_dir <= 22.5) | (grad_dir > 157.5)
     north_south = (grad_dir > 67.5) & (grad_dir <= 112.5)
     northeast_southwest = (grad_dir > 22.5) & (grad_dir <= 67.5)
@@ -71,23 +71,25 @@ def hysteresis_thresholding(img) :
     """
 
     #you can adjust the parameters to fit your own implementation 
+    img = img > 0.3
+    low_ratio = 0.25
+    high_ratio = 0.75
+    max_value = high_ratio * np.average(img)
+    min_value = low_ratio * np.average(img)
+    img = padding(img, 1, "zeroPadding")
     output = np.zeros_like(img)
-    low_ratio = 0.10
-    high_ratio = 0.30
-    max_value = high_ratio * np.max(img)
-    min_value = low_ratio * np.max(img)
     for i in range(1, img.shape[0]-1):
         for j in range(1, img.shape[1]-1):
             if img[i, j] > max_value:
-                output[i, j] = 1
+                output[i, j] = img[i, j]
             elif img[i, j] < min_value:
                 output[i, j] = 0
             else:
                 if np.any(img[i-1:i+1, j-1:j+1] > max_value):
-                    output[i, j] = 1
+                    output[i, j] = img[i, j]
                 else:
                     output[i, j] = 0
-    return output 
+    return output[1:-1, 1:-1]
 
 
 
