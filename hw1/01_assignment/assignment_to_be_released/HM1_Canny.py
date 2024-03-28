@@ -14,6 +14,7 @@ def compute_gradient_magnitude_direction(x_grad, y_grad):
             direction_grad: array(float) you may keep the angle of the gradient at each pixel
     """
     magnitude_grad = np.sqrt(x_grad**2 + y_grad**2)
+    magnitude_grad = magnitude_grad / np.max(magnitude_grad)
     direction_grad = np.arctan2(y_grad, x_grad)
     return magnitude_grad, direction_grad 
 
@@ -71,9 +72,9 @@ def hysteresis_thresholding(img) :
     """
 
     #you can adjust the parameters to fit your own implementation 
-    img = img > 0.3
-    low_ratio = 0.25
-    high_ratio = 0.75
+    img = img > 0.15
+    low_ratio = 0.1
+    high_ratio = 0.3
     max_value = high_ratio * np.average(img)
     min_value = low_ratio * np.average(img)
     img = padding(img, 1, "zeroPadding")
